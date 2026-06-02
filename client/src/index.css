@@ -40,42 +40,53 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Custom Font Families for Alpine Modernism */
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  /* Brand Specific Colors */
+  --color-brand-midnight: #0B192C;
+  --color-brand-navy: #1E3E62;
+  --color-brand-sky: #008DDA;
+  --color-brand-orange: #F15A24;
+  --color-brand-frost: #F1F6F9;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --primary: #1E3E62;
+  --primary-foreground: #F1F6F9;
+  --sidebar-primary: #1E3E62;
+  --sidebar-primary-foreground: #F1F6F9;
+  --chart-1: #008DDA;
+  --chart-2: #F15A24;
+  --chart-3: #1E3E62;
+  --chart-4: #0B192C;
+  --chart-5: #F1F6F9;
+  --radius: 0.375rem; /* Precise micro-rounded corners for Alpine Modernism */
+  --background: #FFFFFF;
+  --foreground: #0B192C;
+  --card: #FFFFFF;
+  --card-foreground: #0B192C;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B192C;
+  --secondary: #F1F6F9;
+  --secondary-foreground: #1E3E62;
+  --muted: #F8FAFC;
+  --muted-foreground: #64748B;
+  --accent: #F1F6F9;
+  --accent-foreground: #1E3E62;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #008DDA;
+  --sidebar: #0B192C;
+  --sidebar-foreground: #F1F6F9;
+  --sidebar-accent: #1E3E62;
+  --sidebar-accent-foreground: #F1F6F9;
+  --sidebar-border: #1E293B;
+  --sidebar-ring: #008DDA;
 }
 
 .dark {
