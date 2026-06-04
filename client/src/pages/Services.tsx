@@ -28,7 +28,9 @@ export default function Services() {
         "Free Second Opinions on Major Repairs",
         "Safety Inspections & Tune-Ups"
       ],
-      color: "border-brand-orange/20 hover:border-brand-orange"
+      color: "border-brand-orange/20 hover:border-brand-orange",
+      image: "/images/service-heating.webp",
+      imageAlt: "HVAC technician servicing a heating system",
     },
     {
       title: "Air Conditioning Systems",
@@ -41,7 +43,9 @@ export default function Services() {
         "Refrigerant Recharge & Tune-Ups",
         "Thermostat Integration & Upgrades"
       ],
-      color: "border-brand-sky/20 hover:border-brand-sky"
+      color: "border-brand-sky/20 hover:border-brand-sky",
+      image: "/images/service-ac.webp",
+      imageAlt: "Outdoor air conditioning unit",
     },
     {
       title: "Duct Cleaning & Air Quality",
@@ -54,7 +58,9 @@ export default function Services() {
         "Humidifiers & Dehumidifiers",
         "Filter Replacement & Programs"
       ],
-      color: "border-emerald-500/20 hover:border-emerald-500"
+      color: "border-emerald-500/20 hover:border-emerald-500",
+      image: "/images/service-airquality.webp",
+      imageAlt: "Air conditioning unit for indoor air quality",
     },
     {
       title: "Comfort Club Membership",
@@ -67,7 +73,9 @@ export default function Services() {
         "No Diagnostic Fees for Members",
         "Extends HVAC Equipment Lifespan"
       ],
-      color: "border-amber-500/20 hover:border-amber-500"
+      color: "border-amber-500/20 hover:border-amber-500",
+      image: "/images/service-thermostat.webp",
+      imageAlt: "Smart Nest thermostat showing temperature",
     }
   ];
 
@@ -96,11 +104,22 @@ export default function Services() {
       {/* Detailed Services Grid */}
       <section className="py-20 md:py-28 container">
         <div className="grid md:grid-cols-2 gap-12">
-          {detailedServices.map((service, index) => (
+          {detailedServices.map((service, index) => {return (
             <div
               key={index}
-              className={`bg-white border p-8 md:p-10 rounded-lg shadow-sm transition-all duration-300 flex flex-col justify-between ${service.color}`}
+              className={`bg-white border rounded-lg shadow-sm transition-all duration-300 flex flex-col justify-between overflow-hidden ${service.color}`}
             >
+              {/* Service Image */}
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.imageAlt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+              <div className="p-8 md:p-10 flex flex-col flex-1 justify-between">
               <div>
                 <div className="w-14 h-14 rounded-sm bg-slate-50 flex items-center justify-center mb-6">
                   {service.icon}
@@ -139,8 +158,9 @@ export default function Services() {
                   100% Guaranteed Work
                 </span>
               </div>
+              </div>{/* end p-8 wrapper */}
             </div>
-          ))}
+          );})}
         </div>
       </section>
 

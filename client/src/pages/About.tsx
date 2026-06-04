@@ -60,6 +60,19 @@ export default function About() {
           </div>
 
           <div className="md:col-span-5">
+            {/* About Team Photo */}
+            <div className="relative rounded-lg overflow-hidden shadow-lg mb-6">
+              <img
+                src="/images/about-team.webp"
+                alt="Home Heating & Air Conditioning professional technician"
+                className="w-full object-cover h-56"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-midnight/60 to-transparent" />
+              <div className="absolute bottom-3 left-4 text-white">
+                <span className="text-xs font-bold tracking-widest uppercase text-brand-sky">Serving Since 1981</span>
+              </div>
+            </div>
             <div className="bg-slate-50 border border-slate-200 p-8 md:p-10 rounded-lg relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-brand-sky/5 rounded-full blur-xl" />
               

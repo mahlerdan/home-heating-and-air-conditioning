@@ -25,24 +25,32 @@ export default function Home() {
       desc: "Stay warm all winter with expert furnace repairs, replacements, and routine heating system tune-ups.",
       icon: <Flame className="w-6 h-6 text-brand-orange" />,
       link: "/services",
+      image: "/images/service-heating.webp",
+      imageAlt: "HVAC technician servicing a heating system",
     },
     {
       title: "Air Conditioning",
       desc: "Beat the Idaho heat with precision AC diagnostics, high-efficiency replacements, and prompt repairs.",
       icon: <Snowflake className="w-6 h-6 text-brand-sky" />,
       link: "/services",
+      image: "/images/service-ac.webp",
+      imageAlt: "Outdoor air conditioning unit",
     },
     {
       title: "Indoor Air Quality",
       desc: "Breathe cleaner air. Professional duct cleaning, sanitization, and air filtration solutions for your home.",
       icon: <Shield className="w-6 h-6 text-emerald-600" />,
       link: "/services",
+      image: "/images/service-airquality.webp",
+      imageAlt: "Air conditioning unit for indoor air quality",
     },
     {
       title: "Comfort Club Maintenance",
       desc: "Join our membership for annual tune-ups, priority service, and exclusive discounts on all repairs.",
       icon: <Award className="w-6 h-6 text-amber-500" />,
       link: "/services",
+      image: "/images/service-thermostat.webp",
+      imageAlt: "Smart Nest thermostat showing temperature",
     },
   ];
 
@@ -132,22 +140,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Abstract Hero Graphic representing Heating & Cooling integration */}
+          {/* Hero Photo — HVAC Technician at Work */}
           <div className="md:col-span-5 hidden md:block">
-            <div className="bg-slate-900/50 border border-white/10 p-8 rounded-lg relative overflow-hidden backdrop-blur-sm">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/20 rounded-full blur-2xl" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-sky/20 rounded-full blur-2xl" />
-
-              <div className="relative z-10 space-y-6 text-center">
-                <div className="w-24 h-24 mx-auto rounded-full bg-white/5 border border-white/10 flex items-center justify-center relative">
-                  <Flame className="w-8 h-8 text-brand-orange absolute animate-pulse" />
-                  <Snowflake className="w-8 h-8 text-brand-sky absolute opacity-20 hover:opacity-100 transition-opacity" />
-                </div>
-                <h3 className="font-display font-bold text-xl">The Magic Valley Standard</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  We don't just fix equipment. We calibrate comfort. Every service comes with background-checked technicians and our unrivaled service guarantee.
-                </p>
-                <div className="bg-white/5 border border-white/10 p-4 rounded text-left space-y-2">
+            <div className="relative rounded-lg overflow-hidden shadow-2xl shadow-black/40 border border-white/10">
+              <img
+                src="/images/hero-hvac.webp"
+                alt="Professional HVAC technician performing service"
+                className="w-full h-full object-cover aspect-[4/3]"
+                loading="eager"
+              />
+              {/* Overlay badge */}
+              <div className="absolute bottom-4 left-4 right-4 bg-brand-midnight/80 backdrop-blur-sm border border-white/10 p-4 rounded">
+                <div className="space-y-2">
                   <div className="flex items-center gap-2 text-xs font-mono text-slate-300">
                     <CheckCircle className="w-4 h-4 text-brand-sky" />
                     <span>Free Second Opinions</span>
@@ -224,26 +228,38 @@ export default function Home() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white border border-slate-200 p-8 rounded-lg shadow-sm hover:shadow-md transition-all group flex flex-col justify-between"
+                className="bg-white border border-slate-200 rounded-lg shadow-sm hover:shadow-md transition-all group flex flex-col justify-between overflow-hidden"
               >
-                <div>
-                  <div className="w-12 h-12 rounded-sm bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-slate-100 transition-colors">
-                    {service.icon}
-                  </div>
-                  <h3 className="font-display font-bold text-xl text-brand-midnight mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    {service.desc}
-                  </p>
+                {/* Service Image */}
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
-                <Link
-                  href={service.link}
-                  className="inline-flex items-center gap-1 text-sm font-bold text-brand-navy hover:text-brand-sky group-hover:gap-2 transition-all"
-                >
-                  Learn More
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="p-8 flex flex-col flex-1 justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-sm bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-slate-100 transition-colors">
+                      {service.icon}
+                    </div>
+                    <h3 className="font-display font-bold text-xl text-brand-midnight mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {service.desc}
+                    </p>
+                  </div>
+                  <Link
+                    href={service.link}
+                    className="inline-flex items-center gap-1 text-sm font-bold text-brand-navy hover:text-brand-sky group-hover:gap-2 transition-all"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -297,51 +313,32 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Alpine Modernism custom abstract visual container */}
-          <div className="bg-brand-midnight text-white p-10 md:p-12 rounded-lg relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-sky/20 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-orange/20 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 space-y-8">
-              <h3 className="font-display font-bold text-2xl border-b border-white/10 pb-4">
+          {/* About Team Photo with Guarantee Overlay */}
+          <div className="relative rounded-lg overflow-hidden shadow-xl">
+            <img
+              src="/images/about-team.webp"
+              alt="Professional HVAC technician at work"
+              className="w-full h-full object-cover min-h-[400px]"
+              loading="lazy"
+            />
+            {/* Dark overlay with guarantee points */}
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-midnight via-brand-midnight/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <h3 className="font-display font-bold text-xl mb-4 border-b border-white/20 pb-3">
                 The Home Heating Guarantee
               </h3>
-
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-sm bg-white/10 flex items-center justify-center shrink-0">
-                    <span className="font-mono text-xs font-bold text-brand-sky">01</span>
-                  </div>
-                  <div>
-                    <h4 className="font-display font-bold text-lg mb-1">Unrivaled Professionalism</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      Continuous extensive training ensures our technicians are on the cutting edge of HVAC science.
-                    </p>
-                  </div>
+              <div className="space-y-3">
+                <div className="flex gap-3">
+                  <span className="font-mono text-xs font-bold text-brand-sky shrink-0 mt-0.5">01</span>
+                  <p className="text-xs text-slate-300 leading-relaxed">Continuous training keeps our technicians on the cutting edge of HVAC science.</p>
                 </div>
-
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-sm bg-white/10 flex items-center justify-center shrink-0">
-                    <span className="font-mono text-xs font-bold text-brand-orange">02</span>
-                  </div>
-                  <div>
-                    <h4 className="font-display font-bold text-lg mb-1">Surpassing Expectations</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      We ask "How can we make it happen?" and go above and beyond to leave you with a smile.
-                    </p>
-                  </div>
+                <div className="flex gap-3">
+                  <span className="font-mono text-xs font-bold text-brand-orange shrink-0 mt-0.5">02</span>
+                  <p className="text-xs text-slate-300 leading-relaxed">We ask "How can we make it happen?" and go above and beyond every time.</p>
                 </div>
-
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-sm bg-white/10 flex items-center justify-center shrink-0">
-                    <span className="font-mono text-xs font-bold text-brand-sky">03</span>
-                  </div>
-                  <div>
-                    <h4 className="font-display font-bold text-lg mb-1">Honest Pricing</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      Transparent upfront pricing with absolutely zero surprise fees or sales pressure.
-                    </p>
-                  </div>
+                <div className="flex gap-3">
+                  <span className="font-mono text-xs font-bold text-brand-sky shrink-0 mt-0.5">03</span>
+                  <p className="text-xs text-slate-300 leading-relaxed">Transparent upfront pricing with zero surprise fees or sales pressure.</p>
                 </div>
               </div>
             </div>
